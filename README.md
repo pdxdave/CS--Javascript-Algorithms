@@ -2,7 +2,7 @@
 CS--Javascript-Algorithms
 
 
-#### Recursion 
+#### Factorial 
 ```
 function recur(num){
   if(num < 1){
