@@ -28,6 +28,9 @@ console.log(fibbo(10))
 ```
 
 #### Insertion Sort
+
+Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. ... Efficient for (quite) small data sets, much like other quadratic sorting algorithms.
+
 ```
 const insert = (nums) => {
   for(let i = 1; i < nums.length; i++){
