@@ -76,3 +76,69 @@ function merge (node1, node2) {
 
 console.log(mergeSort([3,5,1,8,9,11,34,2,23]))
 ```
+#### Linked List
+```
+/*
+head
+  head node       node
+-----|----   -> ----|----  -> null
+ info link     info   link
+
+*/
+
+
+function LinkedList(){
+  // start out with nothing in the list
+  var length = 0;
+  var head = null;
+  
+  var Node = function(element){
+    // this is where we bring in new elements
+    // the next one is set to null
+    this.element = element;
+    this.next = null;
+  }
+  
+  this.size = function(){
+    return length;
+  }
+  
+  this.head = function(){
+    return head
+  }
+  
+  this.add = function(element){
+    var node = new Node(element)
+    if(head === null){
+      head = node;
+    }else{
+      var currentNode = head;
+      
+      // skipping down the list looking for next nodes
+      while(currentNode.next){
+        currentNode = currentNode.next;
+      }
+       // when we get to the end, we add the node
+      currentNode.next = node
+    }
+    length++
+  }
+  
+  
+  this.remove = function(element){
+    var currentNode = head;
+    var previousNode;
+    if(currentNode.element == element){
+      head = currentNode.next;
+    }else{
+      while(currentNode.element !== element){
+        previous = currentNode;
+        currentNode = currentNode.next;
+      }
+      previousNode.next = currentNode.next
+    }
+    length --;
+  }
+ 
+}
+```
