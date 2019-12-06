@@ -8,7 +8,6 @@ function recur(num){
   if(num < 1){
     return 1
   }
-  
   return num * recur(num-1)
 }
 
@@ -17,8 +16,16 @@ console.log(recur(5)); // 120
 
 #### Fibonacci
 ```
+function fibbo(num){
+  if(num <= 1){
+    return num
+  }
+  return fibbo(num -1) + fibbo(num-2)
+}
 
-``
+console.log(fibbo(10))
+
+```
 
 #### Insertion Sort
 ```
