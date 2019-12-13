@@ -77,6 +77,34 @@ function merge (node1, node2) {
 console.log(mergeSort([3,5,1,8,9,11,34,2,23]))
 ```
 #### Linked List
+
+```
+function insertNodeAtTail(head, data) {
+    //check if the head is null. 
+    if(head === null){
+        //if head is null, then data is the new node. 
+        head = new SinglyLinkedListNode(data)
+    } else {
+        let currentNode = head
+        while(currentNode){
+            if(currentNode.next === null){
+                //reached the tail
+                //currentNode is the tail
+                // create a new node instance and add it
+                currentNode.next = new SinglyLinkedListNode(data)
+                break
+            } else {
+                // go to the next node
+                currentNode = currentNode.next
+            }
+        }
+    }
+    //return the head
+    return head
+}
+```
+
+
 ```
 /*
 head
