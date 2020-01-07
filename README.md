@@ -54,27 +54,33 @@ console.log(insert([7,4,5,1,2,9]))
 In computer science, merge sort is an efficient, general-purpose, comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the order of equal elements is the same in the input and output. Merge sort is a divide and conquer algorithm.
 
 ```
-function mergeSort (arr) {
-    if (arr.length < 2) {
-      return arr;
+const mergeSort = nums => {
+  const sortedArray = [...nums];
+  if(sortedArray.length < 2){
+    return nums;
+  }
+  
+  const length = sortedArray.length;
+  const middle = Math.floor(length/2);
+  const left = sortedArray.slice(0, middle);
+  const right = sortedArray.slice(middle);
+  
+  return merge(mergeSort(left), mergeSort(right));
+};
+
+  const merge = (left, right) => {
+    const results = []
+    while(left.length && right.length){
+      if(left[0] <= right[0]){
+        results.push(left.shift())
+      } else {
+        results.push(right.shift())
+      }
     }
-
-    var mid = Math.floor(arr.length / 2);
-    var subLeft = mergeSort(arr.slice(0, mid));
-    var subRight = mergeSort(arr.slice(mid));
-
-    return merge(subLeft, subRight);
-}
-
-function merge (node1, node2) {
-    var result = [];
-    while (node1.length > 0 && node2.length > 0)
-        result.push(node1[0] < node2[0]? node1.shift() : node2.shift());
-    return result.concat(node1.length? node1 : node2);
-}
-
-
-console.log(mergeSort([3,5,1,8,9,11,34,2,23]))
+    return results.concat(left, right)
+  }
+  
+console.log(mergeSort([3, 1, 5, 4, 31, 12, 45, 65,26]))
 ```
 #### Linked List
 
