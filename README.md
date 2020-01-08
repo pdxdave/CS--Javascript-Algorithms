@@ -27,6 +27,29 @@ console.log(fibbo(10))
 
 ```
 
+#### Bubble Sort
+The least desirable sorting option since it has a time complexity of 0(n^2).  Still, it's asked about in interviews.
+
+```
+const bubbleSort = (arr) => {
+  let temp
+  for(let i = arr.length; i > 0; i--){
+    for(let j = 0; j < i; j++){
+      if(arr[j] > arr[j + 1]){
+        temp    = arr[j]
+        arr[j]  = arr[j + 1]
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr
+}
+
+const arr = [3,4,2,7,9,0]
+  
+console.log(bubbleSort(arr))
+```
+
 #### Insertion Sort
 
 Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. ... Efficient for (quite) small data sets, much like other quadratic sorting algorithms.
