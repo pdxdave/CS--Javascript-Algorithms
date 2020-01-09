@@ -34,7 +34,9 @@ The least desirable sorting option since it has a time complexity of 0(n^2).  St
       2, 7, 4, 1, 5, 3
       0  1  2  3  4  5
       
-      We first scan the array comparing the numbers 2 and 7.  If 7 were smaller than 2, we would switch their places.  In this case we don't.  Next, we compare the number 7 to the number 4.  The number 4 is smaller than 7, so they switch places.
+      We first scan the array comparing the numbers 2 and 7.  If 7 were smaller than 2, we would switch their places.    
+      In this case we don't.  Next, we compare the number 7 to the number 4.  The number 4 is smaller than 7,    
+      so they switch places.
       
       2, 4, 7, 1, 5, 3
       0  1  2  3  4  5
@@ -54,7 +56,9 @@ The least desirable sorting option since it has a time complexity of 0(n^2).  St
       2, 4, 1, 5, 3, 7
       0  1  2  3  4  5
       
-      Now this is the result of the first pass.  In order to get the numbers in order from lowest to highest, we have to do the process as many times as it takes.  This is why bubble sort is not a very good solution for sorting.
+      Now this is the result of the first pass.  In order to get the numbers in order from lowest to highest,    
+      we have to do the process as many times as it takes.  This is why bubble sort is not a very good     
+      solution for sorting.
       
 ```
 
