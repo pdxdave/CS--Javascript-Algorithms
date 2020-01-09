@@ -69,12 +69,16 @@ Think of 'i' as the length of the array.  In this case, we have length of six.
 Think of 'j' as the index position of those numbers.
 
 #1 This is asking is the number at index 0, which would be 2, larger than the number
-   at index 1, which would be 4.  No, it's not. 
+   at index 1, which would be 7.  No, it's not. 
    The 'i' gets decremented and we move up the line.  The 'j' get incremented.  
-   Now it's asking is number at index 1, which would be 4, larger than index 2, which would be 1?
+   
+   Now it's asking is number at index 1, which would be 7, larger than index 2, which would be 4?
    Yes, it is.
-   Now we take the index, in this case index 1, with a value of 4, and we send it to the temp variable.
+   
+   Now we take the index, in this case index 1, with a value of 7, and we send it to the temp variable.
    Next, we take that four and move it to the next index number via arr[j + 1], which would be index 2.
+   Next, we take the value that is index 2, which is 4, and send it to index position 1.  This is
+   how they change places.
 
 const bubbleSort = (arr) => {
   let temp
@@ -90,7 +94,7 @@ const bubbleSort = (arr) => {
   return arr
 }
 
-const arr = [2, 4, 1, 5, 3, 7]
+const arr = [2, 7, 4, 1, 5, 3]
   
 console.log(bubbleSort(arr))
 ```
