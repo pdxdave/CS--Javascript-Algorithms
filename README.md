@@ -28,9 +28,40 @@ console.log(fibbo(10))
 ```
 
 #### Bubble Sort
-The least desirable sorting option since it has a time complexity of 0(n^2).  Still, it's asked about in interviews.
+The least desirable sorting option since it has a time complexity of 0(n^2).  Still, it's asked about in interviews. What is a bubble sort and how does it work?  Imagine we have an array of numbers. The top value is the number, the bottom value is its place in the array.  The goal is to sort them from lowest to highest.    
 
 ```
+      2, 7, 4, 1, 5, 3
+      0  1  2  3  4  5
+      
+      We first scan the array comparing the numbers 2 and 7.  If 7 were smaller than 2, we would switch their places.  In this case we don't.  Next, we compare the number 7 to the number 4.  The number 4 is smaller than 7, so they switch places.
+      
+      2, 4, 7, 1, 5, 3
+      0  1  2  3  4  5
+      
+      Now we compare number 7 to the number 1.  The number 1 switches with 7
+      
+      2, 4, 1, 7, 5, 3
+      0  1  2  3  4  5
+      
+      Next, compare number 7 with 5, and we swap again
+      
+      2, 4, 1, 5, 7, 3
+      0  1  2  3  4  5
+      
+      And once more we compare 7 with 3, and the swap happens again
+      
+      2, 4, 1, 5, 3, 7
+      0  1  2  3  4  5
+      
+      Now this is the result of the first pass.  In order to get the numbers in order from lowest to highest, we have to do the process as many times as it takes.  This is why bubble sort is not a very good solution for sorting.
+      
+```
+
+```
+
+So how does this solution work?  
+
 const bubbleSort = (arr) => {
   let temp
   for(let i = arr.length; i > 0; i--){
