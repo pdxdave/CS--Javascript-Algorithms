@@ -13,6 +13,23 @@ function recur(num){
 
 console.log(recur(5)); // 120
 ```
+The above factorial will work for numbers less than 998, but anything larger    
+than that and it bombs out.  Below is a better solution.
+
+```
+const factorial = (n) => {
+  const iter = (count, acc) => {
+    if(count === 1){
+      return acc;
+    }
+    return iter(count - 1, count * acc)
+  }
+  return iter(n, 1)
+}
+
+factorial(3) // 6
+```
+
 
 #### Fibonacci
 ```
