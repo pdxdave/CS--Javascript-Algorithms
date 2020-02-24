@@ -56,17 +56,15 @@ function binarySearch(arr, elem){
     while(arr[middle] !== elem & start <= end){
         if(elem < arr[middle]){
         end = middle -1
-    }else {
-        start = middle + 1;
-
+          }else {
+            start = middle + 1;
+          }
+            middle = Math.floor((start + end) / 2);
+          }
+        if(arr[middle] === elem){
+          return elem
         }
-    middle = Math.floor((start + end) / 2);
-
-    }
-    if(arr[middle] === elem){
-    return elem
   }
-}
 
 console.log(binarySearch([1,2,3,4,5,6,7,8,9], 2))
 ```
