@@ -44,6 +44,33 @@ console.log(fibbo(10))
 
 ```
 
+#### Binary Search
+This is the divide and conqure approach to finding a number.  The important thing to keep in mind is that
+the numbers must already be sorted.  
+
+```
+function binarySearch(arr, elem){
+    var start = 0;
+    var end = arr.length - 1;
+    var middle = Math.floor((start + end) / 2 )
+    while(arr[middle] !== elem & start <= end){
+        if(elem < arr[middle]){
+        end = middle -1
+    }else {
+        start = middle + 1;
+
+        }
+    middle = Math.floor((start + end) / 2);
+
+    }
+    if(arr[middle] === elem){
+    return elem
+  }
+}
+
+console.log(binarySearch([1,2,3,4,5,6,7,8,9], 2))
+```
+
 #### Bubble Sort
 The least desirable sorting option since it has a time complexity of 0(n^2).  Still, it's asked about in interviews. What is a bubble sort and how does it work?  Imagine we have an array of numbers. The top value is the number, the bottom value is its place in the array.  The goal is to sort them from lowest to highest.    
 
